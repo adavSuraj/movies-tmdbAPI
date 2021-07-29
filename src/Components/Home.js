@@ -5,13 +5,20 @@ import HeroImage from './HeroImage';
 import Grid from './Grid';
 import Thumbnail from './Thumbnail';
 import SearchBar from './SearchBar';
+import Button from './Button';
+import Loading from './Loading';
 // import ImgNotFound from '../images/#.jpg'
 
 import { useHomeFetch } from '../hooks/useHomeFetch';
 
 const Home = () => {
-  const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
+  const { state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore } =
+    useHomeFetch();
   console.log(state);
+
+  if (error) {
+    return <div> Something went wrong..please try again. </div>;
+  }
   return (
     <>
       {!searchTerm && state.results[0] ? (
@@ -34,6 +41,10 @@ const Home = () => {
           />
         ))}
       </Grid>
+      {loading && <Loading />}
+      {state.page < state.total_pages && !loading && (
+        <Button text='Show More' callback={() => setIsLoadingMore(true)} />
+      )}
     </>
   );
 };
