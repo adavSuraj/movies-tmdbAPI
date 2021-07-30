@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70px;
-  background: var(--medGrey);
+  height: 35px;
+  background: var(--darkGrey);
   color: var(--white);
 `;
 
@@ -14,10 +14,10 @@ export const Content = styled.div`
   display: flex;
   width: 100%;
   max-width: var(--maxWidth);
-  padding: 0 20px;
   span {
-    font-size: var(--fontMed);
-    color: var(--white);
+    text-decoration: underline;
+    font-size: var(--fontSmall);
+    color: var(--lightGrey);
     padding-right: 10px;
     @media screen and (max-width: 768px) {
       font-size: var(--fontSmall);

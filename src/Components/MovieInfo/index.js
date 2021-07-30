@@ -2,7 +2,7 @@ import React from 'react';
 import Thumbnail from '../Thumbnail';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import { Wrapper, Content, Text } from './movieInfoStyles';
-// import NoImageFound from '../../images/'
+import ImgNotFound from '../../images/no_image.jpg';
 
 const MovieInfo = ({ movie }) => (
   <Wrapper backdrop={movie.backdrop_path}>
@@ -11,7 +11,7 @@ const MovieInfo = ({ movie }) => (
         image={
           movie.poster_path
             ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
-            : null
+            : ImgNotFound
         }
         clickable={false}
       />

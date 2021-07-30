@@ -7,7 +7,7 @@ import Thumbnail from './Thumbnail';
 import SearchBar from './SearchBar';
 import Button from './Button';
 import Loading from './Loading';
-// import ImgNotFound from '../images/#.jpg'
+import ImgNotFound from '../images/no_image.jpg';
 
 import { useHomeFetch } from '../hooks/useHomeFetch';
 
@@ -37,7 +37,7 @@ const Home = () => {
             image={
               movie.poster_path
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-                : null
+                : ImgNotFound
             }
             movieId={movie.id}
           />

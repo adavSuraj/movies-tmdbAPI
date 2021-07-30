@@ -10,6 +10,7 @@ import MovieBar from './MovieBar';
 import Cast from './Cast';
 
 import { useMovieFetch } from '../hooks/useMovieFetch';
+import ImgNotFound from '../images/no_image.jpg';
 
 const Movie = () => {
   const { movieId } = useParams();
@@ -39,7 +40,7 @@ const Movie = () => {
             imageURL={
               actor.profile_path
                 ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
-                : null
+                : ImgNotFound
             }
           />
         ))}
