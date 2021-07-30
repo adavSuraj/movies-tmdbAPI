@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 
 import HeroImage from './HeroImage';
@@ -33,11 +33,13 @@ const Home = () => {
         {state.results.map((movie) => (
           <Thumbnail
             key={movie.id}
+            clickable
             image={
               movie.poster_path
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : null
             }
+            movieId={movie.id}
           />
         ))}
       </Grid>
